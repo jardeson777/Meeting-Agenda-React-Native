@@ -2,6 +2,7 @@ import React from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import HomeDaily from '../screens/HomeDaily';
 import HomeMonthly from '../screens/HomeMonthly';
+import colors from '../global/colors';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -10,22 +11,22 @@ export function MyTabs() {
     <Tab.Navigator
       screenOptions={({}) => ({
         tabBarItemStyle: {
-          marginVertical: 20,
+          marginVertical: 40,
         },
         tabBarStyle: {elevation: 0},
-        tabBarActiveTintColor: 'white',
-        tabBarInactiveTintColor: 'black',
-        tabBarPressColor: '#fbfdfe',
+        tabBarActiveTintColor: colors.white,
+        tabBarInactiveTintColor: colors.black,
+        tabBarPressColor: colors.white,
         tabBarIndicatorContainerStyle: {
-          backgroundColor: '#F4F6F7',
+          backgroundColor: colors.blue100,
         },
         tabBarIndicatorStyle: {
           height: 50,
-          backgroundColor: '#5A95FF',
+          backgroundColor: colors.blue500,
           borderRadius: 50,
           width: 135,
           marginLeft: 20,
-          marginBottom: 20,
+          marginBottom: 40,
         },
         tabBarLabelStyle: {fontSize: 12},
       })}>
