@@ -9,9 +9,9 @@ const Tab = createMaterialTopTabNavigator();
 export function MyTabs() {
   return (
     <Tab.Navigator
-      screenOptions={({}) => ({
+      screenOptions={{
         tabBarItemStyle: {
-          marginVertical: 40,
+          marginTop: 40,
         },
         tabBarStyle: {elevation: 0},
         tabBarActiveTintColor: colors.white,
@@ -26,10 +26,9 @@ export function MyTabs() {
           borderRadius: 50,
           width: 135,
           marginLeft: 20,
-          marginBottom: 40,
         },
         tabBarLabelStyle: {fontSize: 12},
-      })}>
+      }}>
       <Tab.Screen name="Monthly" component={HomeMonthly} />
       <Tab.Screen name="Daily" component={HomeDaily} />
     </Tab.Navigator>
