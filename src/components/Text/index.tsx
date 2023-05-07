@@ -15,11 +15,7 @@ type TextProps = {
   style?: StyleProp<TextStyle>;
 };
 
-const styles = StyleSheet.create<typeof fonts>({
-  'regular-xs': fonts['regular-xs'],
-  'regular-sm': fonts['regular-sm'],
-  'semiBold-xl': fonts['semiBold-xl'],
-});
+const styles = StyleSheet.create<typeof fonts>(fonts);
 
 const Text = ({children, variant, color = 'black', style}: TextProps) => {
   return (

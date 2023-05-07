@@ -5,6 +5,8 @@ import MarkedDatesCalendar from '../../components/MarkedDatesCalendar';
 import CardMeeting from '../../components/CardMeeting';
 import {Meet} from '../../module/Meet';
 import Text from '../../components/Text';
+import Button from '../../components/Button';
+import Icon from '../../components/Icon';
 
 const styles = StyleSheet.create({
   container: {
@@ -28,6 +30,9 @@ const HomeMonthly = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Button variant="circle">
+        <Icon name="plus" color="white" size={20} />
+      </Button>
       <FlatList
         data={meets}
         contentContainerStyle={styles.flatList}
