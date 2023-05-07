@@ -1,8 +1,9 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import colors from '../../global/colors';
 import Icon from '../Icon';
 import {Meet as MeetProps} from '../../module/Meet';
+import Text from '../Text';
 
 type CardMeetingProps = {
   meet: MeetProps;
@@ -28,7 +29,6 @@ const styles = StyleSheet.create({
   },
   textSpied: {
     textDecorationLine: 'line-through',
-    color: colors.blue500,
   },
 });
 
@@ -74,11 +74,19 @@ const CardMeeting = ({meet, variant}: CardMeetingProps) => {
         ) : (
           <Icon name="time" color="gray700" size={20} />
         )}
-        <Text style={isSpied ? styles.textSpied : undefined}>{meet.title}</Text>
+        <Text
+          variant="regular-xs"
+          color={isSpied ? 'blue500' : undefined}
+          style={isSpied ? styles.textSpied : undefined}>
+          {meet.title}
+        </Text>
       </View>
 
       {variant === 'dateFull' ? (
-        <Text style={isSpied ? styles.textSpied : undefined}>
+        <Text
+          variant="regular-xs"
+          color={isSpied ? 'blue500' : undefined}
+          style={isSpied ? styles.textSpied : undefined}>
           {`${date.getDate()} ${
             months[date.getMonth()]
           } · ${date.getHours()}:${date.getMinutes()}`}
@@ -86,7 +94,7 @@ const CardMeeting = ({meet, variant}: CardMeetingProps) => {
       ) : null}
 
       {variant === 'justHour' ? (
-        <Text>{` ${date.getHours()}:${date.getMinutes()}`}</Text>
+        <Text variant="regular-xs">{` ${date.getHours()}:${date.getMinutes()}`}</Text>
       ) : null}
     </View>
   );

@@ -1,9 +1,10 @@
 import React from 'react';
-import {FlatList, SafeAreaView, StyleSheet, Text} from 'react-native';
+import {FlatList, SafeAreaView, StyleSheet, View} from 'react-native';
 import colors from '../../global/colors';
 import MarkedDatesCalendar from '../../components/MarkedDatesCalendar';
 import CardMeeting from '../../components/CardMeeting';
 import {Meet} from '../../module/Meet';
+import Text from '../../components/Text';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,6 +14,9 @@ const styles = StyleSheet.create({
   flatList: {
     paddingHorizontal: 25,
     paddingVertical: 20,
+  },
+  listHeaderComponent: {
+    gap: 40,
   },
 });
 
@@ -28,11 +32,13 @@ const HomeMonthly = () => {
         data={meets}
         contentContainerStyle={styles.flatList}
         ListHeaderComponent={
-          <>
+          <View style={styles.listHeaderComponent}>
             <MarkedDatesCalendar meets={meets} />
 
-            <Text>This month</Text>
-          </>
+            <Text variant="semiBold-xl" color="gray700">
+              This month
+            </Text>
+          </View>
         }
         renderItem={({item}) => {
           return <CardMeeting meet={item} variant="dateFull" />;
